@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* Add custom checkbox styles */
+      input[type="checkbox"]::before {
+        content: "";
+        width: 1.2rem;
+        height: 1.2rem;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em #fff;
+
+        transform-origin: bottom left;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      }
+
+      input[type="checkbox"]:checked::before {
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body
+    class="xl:relative bg-[url('./assets/imgs/survyBGGG.png')] bg-cover bg-center bg-no-repeat h-full xl:h-s w-full -z-10 min-h-screen"
+  >
+    <!-- h-screen -->
+    <form action="get" id="form" class="h-full">
+      <header class="progress fixed w-full shadow-progressShadow">
+        <div class="bg-[#0101016b] w-full h-[6px]">
+          <div
+            data-progress
+            class="bg-progressBG rounded-[1px] h-full w-0"
+          ></div>
+        </div>
+      </header>
+
+      <main class="pb-16 flex justify-center items-center md:pt-3 h-full">
+        <div
+          class="container lg:w-contanerxl text-center overflow-hidden mt-12 min-h-[80vh] flex items-center"
+        >
+          <!-- step 1 -->
+          <div
+            id="step1"
+            data-step
+            class="page px-5 md:px-14 lg:w-3/4 lg:mx-auto flex-col flex"
+          >
+            <div class="stepConatiner flex flex-col gap-y-8">
+              <div class="textss">
+                <h2
+                  class="text-gray-900 text-4xl lg:text-5xl xl:text-6xl font-extrabold text-center transition ease-in-out duration-300 bg-stepHeaderBG text-transparent py-3 [text-shadow:_0px_1px_#4f4e4e45] bg-clip-text"
+                >
+                  What is your name?
+                </h2>
+                <p
+                  class="mt-4 md:mt-6 text-gray-600 text-center font-normal text-md md:text-lg leading-6 md:leading-6 sm:px-20"
+                >
+                  Your name is essential for lenders and their partners to
+                  tailor loan offers and improve your approval odds. This info
+                  may also be used for marketing related to loans, debt relief,
+                  and credit services.
+                </p>
+              </div>
+              <div class="w-3/4 sm:w-96 mx-auto flex flex-col gap-y-8">
+                <div class="f-name flex flex-col items-start">
+                  <label
+                    for="firstName"
+                    class="block pl-0.5 text-sm font-medium text-[#683439]"
+                    >First Name</label
+                  >
+                  <input
+                    id="firstName"
+                    name="firstName"
+                    type=" text"
+                    class="text-white text-lg focus:border-white duration-200 w-full p-4 border bg-[#2824243b] border-primary rounded-md mt-1 outline-none placeholder-shown:not-empty placeholder-red-900"
+                  />
+                  <div
+                    error="error"
+                    class="text-rose-500 text-xs transition ease-in-out duration-300 h-4"
+                  ></div>
+                </div>
+                <div class="f-name flex flex-col items-start">
+                  <label
+                    for="lastName"
+                    class="block pl-0.5 text-sm font-medium text-[#683439]"
+                    >Last Name</label
+                  >
+                  <input
+                    id="lastName"
+                    name="lastName"
+                    type="text"
+                    class="text-white text-lg focus:border-white duration-200 w-full p-4 border bg-[#2824243b] border-primary rounded-md mt-1 outline-none placeholder-shown:not-empty placeholder-red-900"
+                  />
+                  <div
+                    error="error"
+                    class="error text-rose-500 text-xs transition ease-in-out duration-300 h-4"
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="w-4/5 sm:w-96 mx-auto pt-6 flex justify-between max-[640px]:w-9/12 max-[640px]:m-auto max-[640px]:gap-4 py-3"
+              >
+                <button
+                  data-previous-home
+                  class="group flex gap-1 items-center justify-center bg-[rgba(52,52,52,0.94)] hover:bg-theard hover:bg-opacity-60 rounded-md w-40 h-14 text-white text-2xl md:text-[24px] font-bold max-[640px]:text-sm max-[640px]:w-2/4 max-[640px]:h-12 max-[640px]:gap-0 shadow-btn_action duration-200 hover:shadow-none hover:scale-105"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 md:h-8 mt-[4px] rotate-180 max-[640px]:h-4 group-hover:animate-arrowAnimateBack"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    ></path>
+                  </svg>
+                  <span>Back</span>
+                </button>
+
+                <button
+                  data-next
+                  class="group flex gap-1 items-center justify-center bg-[rgba(52,52,52,0.94)] hover:bg-theard hover:bg-opacity-60 rounded-md w-40 h-14 text-white text-2xl md:text-[24px] font-bold max-[640px]:text-sm max-[640px]:w-2/4 max-[640px]:h-12 max-[640px]:gap-0 shadow-btn_action duration-200 hover:shadow-none hover:scale-105"
+                >
+                  <span>Next</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 md:h-8 mt-[4px] max-[640px]:h-4 group-hover:animate-arrowAnimateNext"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- step 2 -->
+          <div
+            id="step2"
+            data-step
+            class="page px-5 md:px-14 lg:w-3/4 lg:mx-auto flex-col hidden"
+          >
+            <div class="stepConatiner flex flex-col gap-y-8">
+              <div class="textss">
+                <h2
+                  class="text-gray-900 text-4xl lg:text-5xl xl:text-6xl font-extrabold text-center transition ease-in-out duration-300 bg-stepHeaderBG text-transparent py-3 [text-shadow:_0px_1px_#4f4e4e45] bg-clip-text"
+                >
+                  What is your contact information?
+                </h2>
+                <p
+                  class="mt-4 md:mt-6 text-gray-600 text-center font-normal text-md md:text-lg leading-6 md:leading-6 sm:px-20"
+                >
+                  Lending partners may reach out to you to confirm your loan
+                  request. You may also receive offers for other credit-related
+                  services.
+                </p>
+              </div>
+              <div class="w-3/4 sm:w-96 mx-auto flex flex-col gap-y-8">
+                <div class="f-name flex flex-col items-start">
+                  <label
+                    for="emailAddress"
+                    class="block pl-0.5 text-sm font-medium text-[#683439]"
+                    >Email Address</label
+                  >
+                  <input
+                    id="emailAddress"
+                    name="emailAddress"
+                    type=" text"
+                    class="text-white text-lg focus:border-white duration-200 w-full p-4 border bg-[#2824243b] border-primary rounded-md mt-1 outline-none placeholder-shown:not-empty placeholder-red-900"
+                  />
+                  <div
+                    error="error"
+                    class="text-rose-500 text-xs transition ease-in-out duration-300 h-4"
+                  ></div>
+                </div>
+                <div class="f-name flex flex-col items-start">
+                  <label
+                    for="phoneNumber"
+                    class="block pl-0.5 text-sm font-medium text-[#683439]"
+                    >Phone Number</label
+                  >
+                  <input
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    type="text"
+                    class="text-white text-lg focus:border-white duration-200 w-full p-4 border bg-[#2824243b] border-primary rounded-md mt-1 outline-none placeholder-shown:not-empty placeholder-red-900"
+                  />
+                  <div
+                    error="error"
+                    class="error text-rose-500 text-xs transition ease-in-out duration-300 h-4"
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="w-4/5 sm:w-96 mx-auto pt-6 flex justify-between max-[640px]:w-9/12 max-[640px]:m-auto max-[640px]:gap-4 py-3"
+              >
+                <button
+                  data-previous
+                  class="group flex gap-1 items-center justify-center bg-[rgba(52,52,52,0.94)] hover:bg-theard hover:bg-opacity-60 rounded-md w-40 h-14 text-white text-2xl md:text-[24px] font-bold max-[640px]:text-sm max-[640px]:w-2/4 max-[640px]:h-12 max-[640px]:gap-0 shadow-btn_action duration-200 hover:shadow-none hover:scale-105"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 md:h-8 mt-[4px] rotate-180 max-[640px]:h-4 group-hover:animate-arrowAnimateBack"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    ></path>
+                  </svg>
+                  <span>Back</span>
+                </button>
+
+                <button
+                  data-next
+                  class="group flex gap-1 items-center justify-center bg-[rgba(52,52,52,0.94)] hover:bg-theard hover:bg-opacity-60 rounded-md w-40 h-14 text-white text-2xl md:text-[24px] font-bold max-[640px]:text-sm max-[640px]:w-2/4 max-[640px]:h-12 max-[640px]:gap-0 shadow-btn_action duration-200 hover:shadow-none hover:scale-105"
+                >
+                  <span>Next</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 md:h-8 mt-[4px] max-[640px]:h-4 group-hover:animate-arrowAnimateNext"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- step 3 -->
+          <div
+            id="step3"
+            data-step
+            class="page px-5 md:px-14 lg:w-3/4 lg:mx-auto flex-col hidden"
+          >
+            <div class="stepConatiner flex flex-col gap-y-8">
+              <div class="textss">
+                <h2
+                  class="text-gray-900 text-4xl lg:text-5xl xl:text-6xl font-extrabold text-center transition ease-in-out duration-300 bg-stepHeaderBG text-transparent py-3 [text-shadow:_0px_1px_#4f4e4e45] bg-clip-text"
+                >
+                  How do you approach responsive design in your projects?
+                </h2>
+              </div>
+
+              <div
+                data-show
+                class="w-3/4 sm:w-96 mx-auto grid grid-cols-1 mt-11 gap-y-10 justify-items-center max-[380px]:w-11/12 min-h-[300px]"
+              ></div>
+              <!-- mt-6 -->
+              <div
+                class="buttons w-4/5 sm:w-96 mx-auto pt-6 flex justify-center max-[640px]:w-9/12 max-[640px]:m-auto max-[640px]:gap-4 py-3"
+              >
+                <button
+                  data-previous
+                  class="group flex gap-1 items-center justify-center bg-[rgba(52,52,52,0.94)] hover:bg-theard hover:bg-opacity-60 rounded-md w-40 h-14 text-white text-2xl md:text-[24px] font-bold max-[640px]:text-sm max-[640px]:w-2/4 max-[640px]:h-12 max-[640px]:gap-0 shadow-btn_action duration-200 hover:shadow-none hover:scale-105"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 md:h-8 mt-[4px] rotate-180 max-[640px]:h-4 group-hover:animate-arrowAnimateBack"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    ></path>
+                  </svg>
+                  <span>Back</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- step 4 -->
+          <div
+            id="step4"
+            data-step
+            class="page px-5 md:px-14 lg:w-3/4 lg:mx-auto flex-col hidden"
+          >
+            <div class="stepConatiner flex flex-col gap-y-8">
+              <div class="textss">
+                <h2
+                  class="text-gray-900 text-4xl lg:text-5xl xl:text-6xl font-extrabold text-center transition ease-in-out duration-300 bg-stepHeaderBG text-transparent py-3 [text-shadow:_0px_1px_#4f4e4e45] bg-clip-text"
+                >
+                  Which frontend frameworks or libraries do you prefer to use?
+                </h2>
+              </div>
+
+              <div
+                data-show
+                class="w-3/4 sm:w-96 mx-auto grid grid-cols-1 mt-11 gap-y-10 justify-items-center max-[380px]:w-11/12 min-h-[300px] [&>*]:tracking-[3px]"
+              ></div>
+              <div
+                class="buttons w-4/5 sm:w-96 mx-auto pt-6 flex justify-center max-[640px]:w-9/12 max-[640px]:m-auto max-[640px]:gap-4 py-3"
+              >
+                <button
+                  data-previous
+                  class="group flex gap-1 items-center justify-center bg-[rgba(52,52,52,0.94)] hover:bg-theard hover:bg-opacity-60 rounded-md w-40 h-14 text-white text-2xl md:text-[24px] font-bold max-[640px]:text-sm max-[640px]:w-2/4 max-[640px]:h-12 max-[640px]:gap-0 shadow-btn_action duration-200 hover:shadow-none hover:scale-105"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 md:h-8 mt-[4px] rotate-180 max-[640px]:h-4 group-hover:animate-arrowAnimateBack"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    ></path>
+                  </svg>
+                  <span>Back</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- step 5 -->
+          <div
+            id="step5"
+            data-step
+            class="page px-5 md:px-14 lg:w-3/4 lg:mx-auto flex-col hidden"
+          >
+            <div class="stepConatiner flex flex-col gap-y-8">
+              <div class="textss">
+                <h2
+                  class="text-gray-900 text-4xl lg:text-5xl xl:text-6xl font-extrabold text-center transition ease-in-out duration-300 bg-stepHeaderBG text-transparent py-3 [text-shadow:_0px_1px_#4f4e4e45] bg-clip-text"
+                >
+                  Which frontend development skills do you possess?
+                </h2>
+              </div>
+
+              <div
+                data-show
+                class="w-3/4 sm:w-[26rem] mx-auto grid grid-cols-2 sm:grid-cols-3 mt-11 gap-12 justify-items-center max-[380px]:w-11/12"
+              ></div>
+
+              <div class="text-[#E91E63] mt-6 h-7">
+                <p data-target="error"></p>
+              </div>
+              <div
+                class="w-4/5 sm:w-96 mx-auto pt-6 flex justify-between max-[640px]:w-9/12 max-[640px]:m-auto max-[640px]:gap-4 py-3"
+              >
+                <button
+                  data-previous
+                  class="group flex gap-1 items-center justify-center bg-[rgba(52,52,52,0.94)] hover:bg-theard hover:bg-opacity-60 rounded-md w-40 h-14 text-white text-2xl md:text-[24px] font-bold max-[640px]:text-sm max-[640px]:w-2/4 max-[640px]:h-12 max-[640px]:gap-0 shadow-btn_action duration-200 hover:shadow-none hover:scale-105"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 md:h-8 mt-[4px] rotate-180 max-[640px]:h-4 group-hover:animate-arrowAnimateBack"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    ></path>
+                  </svg>
+                  <span>Back</span>
+                </button>
+
+                <button
+                  data-next
+                  class="group flex gap-1 items-center justify-center bg-[rgba(52,52,52,0.94)] hover:bg-theard hover:bg-opacity-60 rounded-md w-40 h-14 text-white text-2xl md:text-[24px] font-bold max-[640px]:text-sm max-[640px]:w-2/4 max-[640px]:h-12 max-[640px]:gap-0 shadow-btn_action duration-200 hover:shadow-none hover:scale-105"
+                >
+                  <span>Next</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 md:h-8 mt-[4px] max-[640px]:h-4 group-hover:animate-arrowAnimateNext"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- step 6 -->
+          <div
+            id="step6"
+            data-step
+            class="page px-5 md:px-14 lg:w-3/4 lg:mx-auto flex-col hidden"
+          >
+            <div class="stepConatiner flex flex-col gap-y-8">
+              <div class="textss">
+                <h2
+                  class="text-gray-900 text-4xl lg:text-5xl xl:text-6xl font-extrabold text-center transition ease-in-out duration-300 bg-stepHeaderBG text-transparent py-3 [text-shadow:_0px_1px_#4f4e4e45] bg-clip-text"
+                >
+                  Please select your proficiency level in HTML
+                </h2>
+              </div>
+
+              <div
+                data-show
+                class="w-3/4 sm:w-96 mx-auto grid grid-cols-1 mt-11 gap-y-10 justify-items-center max-[380px]:w-11/12 min-h-[300px]"
+              ></div>
+              <!-- mt-6 -->
+              <div
+                class="buttons w-4/5 sm:w-96 mx-auto pt-6 flex justify-center max-[640px]:w-9/12 max-[640px]:m-auto max-[640px]:gap-4 py-3"
+              >
+                <button
+                  data-previous
+                  class="group flex gap-1 items-center justify-center bg-[rgba(52,52,52,0.94)] hover:bg-theard hover:bg-opacity-60 rounded-md w-40 h-14 text-white text-2xl md:text-[24px] font-bold max-[640px]:text-sm max-[640px]:w-2/4 max-[640px]:h-12 max-[640px]:gap-0 shadow-btn_action duration-200 hover:shadow-none hover:scale-105"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 md:h-8 mt-[4px] rotate-180 max-[640px]:h-4 group-hover:animate-arrowAnimateBack"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    ></path>
+                  </svg>
+                  <span>Back</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- step 7 -->
+          <div
+            id="step7"
+            data-step
+            class="page px-5 md:px-14 lg:w-3/4 lg:mx-auto flex-col hidden"
+          >
+            <div class="stepConatiner flex flex-col gap-y-8">
+              <div class="textss">
+                <h2
+                  class="text-gray-900 text-4xl lg:text-5xl xl:text-6xl font-extrabold text-center transition ease-in-out duration-300 bg-stepHeaderBG text-transparent py-3 [text-shadow:_0px_1px_#4f4e4e45] bg-clip-text"
+                >
+                  Please select your proficiency level in Css
+                </h2>
+              </div>
+
+              <div
+                data-show
+                class="w-3/4 sm:w-96 mx-auto grid grid-cols-1 mt-11 gap-y-10 justify-items-center max-[380px]:w-11/12 min-h-[300px]"
+              ></div>
+              <!-- mt-6 -->
+              <div
+                class="buttons w-4/5 sm:w-96 mx-auto pt-6 flex justify-center max-[640px]:w-9/12 max-[640px]:m-auto max-[640px]:gap-4 py-3"
+              >
+                <button
+                  data-previous
+                  class="group flex gap-1 items-center justify-center bg-[rgba(52,52,52,0.94)] hover:bg-theard hover:bg-opacity-60 rounded-md w-40 h-14 text-white text-2xl md:text-[24px] font-bold max-[640px]:text-sm max-[640px]:w-2/4 max-[640px]:h-12 max-[640px]:gap-0 shadow-btn_action duration-200 hover:shadow-none hover:scale-105"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 md:h-8 mt-[4px] rotate-180 max-[640px]:h-4 group-hover:animate-arrowAnimateBack"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    ></path>
+                  </svg>
+                  <span>Back</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- step 8 -->
+          <div
+            id="step8"
+            data-step
+            class="page px-5 md:px-14 lg:w-3/4 lg:mx-auto flex-col hidden"
+          >
+            <div class="stepConatiner flex flex-col gap-y-8">
+              <div class="textss">
+                <h2
+                  class="text-gray-900 text-4xl lg:text-5xl xl:text-6xl font-extrabold text-center transition ease-in-out duration-300 bg-stepHeaderBG text-transparent py-3 [text-shadow:_0px_1px_#4f4e4e45] bg-clip-text"
+                >
+                  Please select your proficiency level in JavaScript
+                </h2>
+              </div>
+
+              <div
+                data-show
+                class="w-3/4 sm:w-96 mx-auto grid grid-cols-1 mt-11 gap-y-10 justify-items-center max-[380px]:w-11/12 min-h-[300px]"
+              ></div>
+              <!-- mt-6 -->
+              <div
+                class="buttons w-4/5 sm:w-96 mx-auto pt-6 flex justify-center max-[640px]:w-9/12 max-[640px]:m-auto max-[640px]:gap-4 py-3"
+              >
+                <button
+                  data-previous
+                  class="group flex gap-1 items-center justify-center bg-[rgba(52,52,52,0.94)] hover:bg-theard hover:bg-opacity-60 rounded-md w-40 h-14 text-white text-2xl md:text-[24px] font-bold max-[640px]:text-sm max-[640px]:w-2/4 max-[640px]:h-12 max-[640px]:gap-0 shadow-btn_action duration-200 hover:shadow-none hover:scale-105"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 md:h-8 mt-[4px] rotate-180 max-[640px]:h-4 group-hover:animate-arrowAnimateBack"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    ></path>
+                  </svg>
+                  <span>Back</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- step 9 -->
+          <div
+            id="step9"
+            data-step
+            class="page px-5 md:px-14 lg:w-3/4 lg:mx-auto flex-col hidden"
+          >
+            <div class="stepConatiner flex flex-col gap-y-8">
+              <div class="textss">
+                <h2
+                  class="text-gray-900 text-4xl lg:text-5xl xl:text-6xl font-extrabold text-center transition ease-in-out duration-300 bg-stepHeaderBG text-transparent py-3 [text-shadow:_0px_1px_#4f4e4e45] bg-clip-text"
+                >
+                  Which frontend libraries and tools do you regularly use?
+                </h2>
+              </div>
+
+              <div
+                data-show
+                class="w-3/4 sm:w-[26rem] mx-auto grid grid-cols-2 sm:grid-cols-3 mt-11 gap-12 justify-items-center max-[380px]:w-11/12"
+              ></div>
+
+              <div class="text-[#E91E63] mt-6 h-7">
+                <p data-target="error"></p>
+              </div>
+              <div
+                class="w-4/5 sm:w-96 mx-auto pt-6 flex justify-between max-[640px]:w-9/12 max-[640px]:m-auto max-[640px]:gap-4 py-3"
+              >
+                <button
+                  data-previous
+                  class="group flex gap-1 items-center justify-center bg-[rgba(52,52,52,0.94)] hover:bg-theard hover:bg-opacity-60 rounded-md w-40 h-14 text-white text-2xl md:text-[24px] font-bold max-[640px]:text-sm max-[640px]:w-2/4 max-[640px]:h-12 max-[640px]:gap-0 shadow-btn_action duration-200 hover:shadow-none hover:scale-105"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 md:h-8 mt-[4px] rotate-180 max-[640px]:h-4 group-hover:animate-arrowAnimateBack"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    ></path>
+                  </svg>
+                  <span>Back</span>
+                </button>
+
+                <button
+                  data-next
+                  class="group flex gap-1 items-center justify-center bg-[rgba(52,52,52,0.94)] hover:bg-theard hover:bg-opacity-60 rounded-md w-40 h-14 text-white text-2xl md:text-[24px] font-bold max-[640px]:text-sm max-[640px]:w-2/4 max-[640px]:h-12 max-[640px]:gap-0 shadow-btn_action duration-200 hover:shadow-none hover:scale-105"
+                >
+                  <span>Next</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 md:h-8 mt-[4px] max-[640px]:h-4 group-hover:animate-arrowAnimateNext"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- step 10 -->
+          <div
+            id="step10"
+            data-step
+            class="page px-5 md:px-14 lg:w-3/4 lg:mx-auto flex-col hidden"
+          >
+            <div class="stepConatiner flex flex-col gap-y-8">
+              <div class="textss">
+                <h2
+                  class="text-gray-900 text-4xl lg:text-5xl xl:text-6xl font-extrabold text-center transition ease-in-out duration-300 bg-stepHeaderBG text-transparent py-3 [text-shadow:_0px_1px_#4f4e4e45] bg-clip-text"
+                >
+                  How would you describe your experience level as a frontend
+                  developer?
+                </h2>
+              </div>
+
+              <div
+                data-show
+                class="w-3/4 sm:w-96 mx-auto grid grid-cols-1 mt-11 gap-y-10 justify-items-center max-[380px]:w-11/12 min-h-[300px]"
+              ></div>
+
+              <div
+                class="buttons w-4/5 sm:w-96 mx-auto pt-6 flex justify-center max-[640px]:w-9/12 max-[640px]:m-auto max-[640px]:gap-4 py-3"
+              >
+                <button
+                  data-previous
+                  class="group flex gap-1 items-center justify-center bg-[rgba(52,52,52,0.94)] hover:bg-theard hover:bg-opacity-60 rounded-md w-40 h-14 text-white text-2xl md:text-[24px] font-bold max-[640px]:text-sm max-[640px]:w-2/4 max-[640px]:h-12 max-[640px]:gap-0 shadow-btn_action duration-200 hover:shadow-none hover:scale-105"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 md:h-8 mt-[4px] rotate-180 max-[640px]:h-4 group-hover:animate-arrowAnimateBack"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    ></path>
+                  </svg>
+                  <span>Back</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- step 11-->
+          <div
+            id="step11"
+            data-step
+            class="page px-5 md:px-14 lg:w-3/4 lg:mx-auto flex-col hidden"
+          >
+            <div class="stepConatiner flex flex-col gap-y-16">
+              <div class="textss">
+                <h2
+                  class="text-gray-900 text-4xl lg:text-5xl xl:text-6xl font-extrabold text-center transition ease-in-out duration-300 bg-stepHeaderBG text-transparent py-3 [text-shadow:_0px_1px_#4f4e4e45] bg-clip-text"
+                >
+                  Please enter your expected annual salary range:
+                </h2>
+              </div>
+              <div class="w-3/4 sm:w-96 mx-auto flex flex-col gap-y-8">
+                <div
+                  class="relative f-name flex flex-col items-start focus-within:text-white"
+                >
+                  <label
+                    for="expectedSalary"
+                    class="block pl-0.5 text-sm font-medium text-[#683439]"
+                    >Expected Salary</label
+                  >
+
+                  <div
+                    class="absolute top-1/2 left-0 transform -translate-y-1/2 translate-x-1/2 flex justify-center items-center h-full pl-2"
+                  >
+                    <span class="text-2xl pt-[7px]">$</span>
+                  </div>
+
+                  <input
+                    id="expectedSalary"
+                    name="expectedSalary"
+                    type=" text"
+                    class="pl-9 text-xl focus:border-white duration-200 w-full p-4 border bg-[#2824243b] border-primary rounded-md mt-1 outline-none placeholder-shown:not-empty placeholder-red-900"
+                  />
+
+                  <div
+                    error="error"
+                    class="text-rose-500 text-xs transition ease-in-out duration-300 h-4"
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="w-4/5 sm:w-96 mx-auto pt-6 flex justify-between max-[640px]:w-9/12 max-[640px]:m-auto max-[640px]:gap-4 py-3"
+              >
+                <button
+                  data-previous
+                  class="group flex gap-1 items-center justify-center bg-[rgba(52,52,52,0.94)] hover:bg-theard hover:bg-opacity-60 rounded-md w-40 h-14 text-white text-2xl md:text-[24px] font-bold max-[640px]:text-sm max-[640px]:w-2/4 max-[640px]:h-12 max-[640px]:gap-0 shadow-btn_action duration-200 hover:shadow-none hover:scale-105"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 md:h-8 mt-[4px] rotate-180 max-[640px]:h-4 group-hover:animate-arrowAnimateBack"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    ></path>
+                  </svg>
+                  <span>Back</span>
+                </button>
+
+                <button
+                  data-next
+                  class="group flex gap-1 items-center justify-center bg-[rgba(52,52,52,0.94)] hover:bg-theard hover:bg-opacity-60 rounded-md w-40 h-14 text-white text-2xl md:text-[24px] font-bold max-[640px]:text-sm max-[640px]:w-2/4 max-[640px]:h-12 max-[640px]:gap-0 shadow-btn_action duration-200 hover:shadow-none hover:scale-105"
+                >
+                  <span>Next</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 md:h-8 mt-[4px] max-[640px]:h-4 group-hover:animate-arrowAnimateNext"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- step 12-->
+          <div
+            id="step12"
+            data-step
+            class="page px-5 md:px-14 lg:w-3/4 lg:mx-auto flex-col hidden"
+          >
+            <div class="flex flex-col gap-y-16">
+              <div class="textss">
+                <h2
+                  class="text-gray-900 text-4xl lg:text-5xl xl:text-6xl font-extrabold text-center transition ease-in-out duration-300 bg-stepHeaderBG text-transparent py-3 [text-shadow:_0px_1px_#4f4e4e45] bg-clip-text"
+                >
+                  Thank you for taking the time to complete the survey!
+                </h2>
+
+                <p
+                  class="mt-4 md:mt-6 text-gray-600 text-center font-normal text-md md:text-lg leading-6 md:leading-6 sm:px-20"
+                >
+                  Your responses provide valuable insights into your skills and
+                  qualifications, which will help us better understand how your
+                  expertise aligns with our requirements.
+                </p>
+              </div>
+
+              <div
+                class="w-4/5 sm:w-96 mx-auto pt-6 flex justify-between max-[640px]:w-9/12 max-[640px]:m-auto max-[640px]:gap-4 py-3"
+              >
+                <button
+                  data-previous
+                  class="group flex gap-1 items-center justify-center bg-[rgba(52,52,52,0.94)] hover:bg-theard hover:bg-opacity-60 rounded-md w-40 h-14 text-white text-2xl md:text-[24px] font-bold max-[640px]:text-sm max-[640px]:w-2/4 max-[640px]:h-12 max-[640px]:gap-0 shadow-btn_action duration-200 hover:shadow-none hover:scale-105"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 md:h-8 mt-[4px] rotate-180 max-[640px]:h-4 group-hover:animate-arrowAnimateBack"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    ></path>
+                  </svg>
+                  <span>Back</span>
+                </button>
+
+                <button
+                  data-previous-home
+                  class="group flex gap-1 items-center justify-center bg-[rgba(52,52,52,0.94)] hover:bg-theard hover:bg-opacity-60 rounded-md w-40 h-14 text-white text-2xl md:text-[24px] font-bold max-[640px]:text-sm max-[640px]:w-2/4 max-[640px]:h-12 max-[640px]:gap-0 shadow-btn_action duration-200 hover:shadow-none hover:scale-105"
+                >
+                  <span>Home</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 md:h-8 mt-[4px] max-[640px]:h-4 group-hover:animate-arrowAnimateNext"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </form>
+
+    <!-- Start classes test  -->
+    <div
+      class="bg-pink-100 border-rose-300 shadow-inputShadowError animate-slide-prev hidden"
+    ></div>
+    <button
+      class="group overflow-hidden relative w-80 h-16 outline-none animate-slide-next shadow-desginApproach justify-center font-bold items-center rounded-md text-xl px-7 bg-[#d470925c] border border-[#833f56] text-[#403d3d] hover:scale-105 hover:text-secondary duration-200 max-[380px]:w-full max-[380px]:text-base max-[380px]:leading-none max-[380px]:h-16 hidden"
+    >
+      <div
+        class="absolute w-0 h-0 left-2/4 top-2/4 text-[#5f5559] -translate-x-2/4 -translate-y-2/4 -z-20 bg-[#cb545473] group-hover:animate-flashing"
+      ></div>
+    </button>
+
+    <div
+      class="justify-start items-center gap-x-2 font- bold w-32 sm:w-[150px] text-base sm:text-lg font-custmeFont text-[#5f3438] hidden"
+    >
+      <input
+        class="appearance-none -webkit-appearance-none m-0 w-8 h-8 border border-solid rounded-[3px] border-secondary grid place-content-center bg-[#976e72]"
+      />
+    </div>
+    <!-- End classes test  -->
+
+    <script src="./survey.js"></script>
+  </body>
+</html>

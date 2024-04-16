@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-100">
+    <header class="relative py-16 px-0">
+      <div
+        class="flex justify-between items-center container xl:w-contanerxl pl-4 pr-4 ml-auto mr-auto max-[769px]:items-center flex-wrap"
+      >
+        <div class="logo max-[769px]:w-3/5">
+          <a href="#/">
+            <img src="./assets/svg/logo.svg" alt="" />
+          </a>
+        </div>
+        <!-- start naSwitch -->
+        <div
+          class="buttonContainer group justify-end items-center max-[769px]:flex hidden"
+        >
+          <!-- start button bar  -->
+          <div class="ButtomBar button w-16 h-16 cursor-pointer rounded-lg">
+            <div
+              class="bar relative flex justify-center items-center w-full h-full"
+            >
+              <div
+                class="menueOpenUp absolute left-2/4 w-11 h-1 overflow-hidden bg-secondary top-[calc(100%-42px)] -translate-x-2/4 [&>*]:bg-gray-600 [&>*]:absolute [&>*]:w-[76px] [&>*]:h-[76px] [&>*]:right-0 [&>*]:duration-300 [&>*]:ease-linear"
+              >
+                <div class="opacity-30"></div>
+                <div
+                  class="-translate-x-1/4 delay-100 group-hover:translate-x-[80%] group-hover:delay-0"
+                ></div>
+                <div
+                  class="-translate-x-full group-hover:-translate-x-[14%] group-hover:delay-200"
+                ></div>
+              </div>
+              <div
+                class="menueOpenDown absolute left-2/4 w-11 h-1 overflow-hidden bg-secondary top-[calc(100%-21px)] -translate-x-2/4 rotate-180 [&>*]:bg-gray-600 [&>*]:absolute [&>*]:w-[76px] [&>*]:h-[76px] [&>*]:right-0 [&>*]:duration-300 [&>*]:ease-linear"
+              >
+                <div class="opacity-30"></div>
+                <div
+                  class="-translate-x-1/4 delay-100 group-hover:translate-x-[80%] group-hover:delay-0"
+                ></div>
+                <div
+                  class="-translate-x-full group-hover:-translate-x-[14%] group-hover:delay-200"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <!-- end button bar  -->
+
+          <!-- Start croos bar  -->
+          <div
+            class="ButtomCroos group button w-16 h-16 cursor-pointer rounded-lg hidden"
+          >
+            <div
+              class="cross relative flex justify-center items-center w-full h-full [&>*]:absolute [&>*]:w-[44px] [&>*]:h-[4px] [&>*]:origin-center [&>*]:bg-gray-300 [&>*]:before:content-[''] [&>*]:before:absolute [&>*]:before:left-2/4 [&>*]:before:-translate-x-2/4 [&>*]:before:top-0 [&>*]:before:w-0 [&>*]:before:h-full [&>*]:before:bg-gray-600 [&>*]:before:duration-300 group-hover:[&>*]:before:w-full"
+            >
+              <div class="lineOne rotate-45"></div>
+              <div class="lineTwo -rotate-45"></div>
+            </div>
+          </div>
+
+          <!-- End croos bar  -->
+        </div>
+        <!-- end naSwitch -->
+        <div class="animate-navAnimateFadOut hidden"></div>
+
+        <nav
+          class="navBar animate-navAnimateFadIn w-3/4 max-[769px]:overflow-hidden max-[769px]:hidden"
+        >
+          <!-- For REFactor -->
+          <ul
+            class="flex w-full justify-end items-center font-custmeFont font-normal text-theard max-[769px]:absolute max-[769px]:flex-col max-[769px]:text-center max-[769px]:-translate-x-1/2 max-[769px]:translate-y-[25%] max-[769px]:top-2/4 max-[769px]:left-2/4 max-[769px]:min-w-60 max-[769px]:w-11/12 max-[769px]:pt-10 max-[769px]:pb-8 max-[769px]:px-10 max-[769px]:border-2 max-[769px]:border-primary max-[769px]:rounded-xl max-[769px]:gap-3 max-[769px]:shadow-navBar max-[769px]:bg-navEditBg"
+          >
+            <li
+              class="group relative text-xl mr-2 p-5 capitalize tracking-wider max-[769px]:hover:text-[#2f4650] hover:text-primary active:text-primary duration-100 max-[769px]:text-[#02332f] max-[769px]:w-full cursor-pointer"
+            >
+              <a href="index.html">home</a>
+              <span
+                class="absolute w-3/4 left-2/4 -translate-x-2/4 bottom-1 h-1 before:content-[''] before:absolute before:left-2/4 before:-translate-x-2/4 before:top-0 before:bg-primary max-[769px]:before:bg-[#2f4650] before:h-full before:rounded-2xl before:duration-200 before:w-0 group-hover:before:w-full max-[769px]:w-full"
+              ></span>
+            </li>
+
+            <li
+              class="group relative text-xl mr-2 p-5 capitalize tracking-wider max-[769px]:hover:text-[#2f4650] hover:text-primary duration-100 max-[769px]:text-[#02332f] max-[769px]:w-full cursor-pointer"
+            >
+              <a href="contactus.html">contact us</a>
+              <span
+                class="absolute w-3/4 left-2/4 -translate-x-2/4 bottom-1 h-1 before:content-[''] before:absolute before:left-2/4 before:-translate-x-2/4 before:top-0 before:bg-primary max-[769px]:before:bg-[#2f4650] before:h-full before:rounded-2xl before:duration-200 before:w-0 group-hover:before:w-full max-[769px]:w-full"
+              ></span>
+            </li>
+
+            <li
+              class="group relative text-xl mr-2 p-5 capitalize tracking-wider max-[769px]:hover:text-[#2f4650] hover:text-primary duration-100 max-[769px]:text-[#02332f] max-[769px]:w-full cursor-pointer"
+            >
+              <a href="help.html">help</a>
+              <span
+                class="absolute w-3/4 left-2/4 -translate-x-2/4 bottom-1 h-1 before:content-[''] before:absolute before:left-2/4 before:-translate-x-2/4 before:top-0 before:bg-primary max-[769px]:before:bg-[#2f4650] before:h-full before:rounded-2xl before:duration-200 before:w-0 group-hover:before:w-full max-[769px]:w-full"
+              ></span>
+            </li>
+            <li
+              class="relative text-xl capitalize cursor-pointer tracking-tight rounded-full px-5 py-2 duration-200 md:border md:border-solid md:border-primary hover:scale-105 shadow-btnHover hover:text-secondary text-primary hover:bg-primary bg-secondary max-[769px]:mt-6 max-[769px]:px-8 max-[769px]:border-b-4 max-[769px]:border-primary"
+            >
+              <a href="getstarted.html"> get started</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <h2
+      class="text-gray-900 text-4xl lg:text-5xl xl:text-6xl font-extrabold text-center transition ease-in-out duration-300 bg-stepHeaderBG text-transparent py-3 [text-shadow:_0px_1px_#4f4e4e45] bg-clip-text mt-10"
+    >
+      contactus page not created yet :(
+    </h2>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
